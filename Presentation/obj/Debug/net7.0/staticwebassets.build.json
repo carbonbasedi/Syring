@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QRPO2idLkqfIhZtDDDP+M6y+pkCcdphRP2/nwm5GG1I=",
+  "Hash": "z1dApDZ6x9foVqsmb3lDCxKfxJmms3umeqJJBrniSxc=",
   "Source": "Presentation",
   "BasePath": "_content/Presentation",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Admin\\js\\sb-admin-2.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\Admin\\js\\script.js",
+      "SourceId": "Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\",
+      "BasePath": "_content/Presentation",
+      "RelativePath": "Admin/js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\js\\script.js"
     },
     {
       "Identity": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\Admin\\scss\\_buttons.scss",

@@ -18,11 +18,4 @@
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\Abstract\" />
-    <Folder Include="Repositories\Base\" />
-    <Folder Include="Repositories\Concrete\" />
-    <Folder Include="UnitOfWork\" />
-  </ItemGroup>
-
 </Project>

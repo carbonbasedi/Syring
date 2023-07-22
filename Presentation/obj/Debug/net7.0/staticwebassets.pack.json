@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\Admin\\js\\sb-admin-2.min.js"
     },
     {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\Admin\\js\\script.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\script.js"
+    },
+    {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\Admin\\scss\\_buttons.scss",
       "PackagePath": "staticwebassets\\Admin\\scss\\_buttons.scss"
     },
