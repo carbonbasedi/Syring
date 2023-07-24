@@ -1,0 +1,45 @@
+﻿@using Business.ViewModels.Admin.Vision
+@model VisionListVM
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">Vision</h1>
+	<a class="btn btn-primary m-3" asp-action="create" asp-controller="vision">Create</a>
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Sub Header</th>
+							<th>Header</th>
+							<th>Created At</th>
+							<th>Modified At</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var vision in Model.Visions)
+						{
+							<tr>
+								<td>@vision.SubHeader</td>
+								<td>@vision.Header</td>
+								<td>@vision.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
+								<td>@vision.UpdatedAt?.ToString("dd.MM.yyyy HH:mm:ss")</td>
+								<td>
+									<a asp-action="update" asp-controller="vision" asp-route-id="@vision.Id" class="btn btn-primary">Update</a>
+									<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="vision" asp-route-id="@vision.Id" class="btn btn-danger">Delete</a>
+									<a asp-action="details" asp-controller="vision" asp-route-id="@vision.Id" class="btn btn-primary">Details</a>
+
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.container-fluid -->

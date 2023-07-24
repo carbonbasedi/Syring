@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories.Abstract
 {
-	public interface ISliderRepository : IRepository<Slider>
-	{
-		public Slider GetSlider();
-	}
+    public interface ISliderRepository : IRepository<Slider>
+    {
+        public Slider GetSlider();
+    }
 }

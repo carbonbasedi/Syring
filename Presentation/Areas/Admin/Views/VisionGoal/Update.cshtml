@@ -1,0 +1,40 @@
+﻿@using Business.ViewModels.Admin.VisionGoal
+@model VisionGoalUpdateVM
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Update Vision Goal</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form enctype="multipart/form-data" asp-action="update" asp-controller="visiongoal" method="post">
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <input class="form-control" asp-for="Title">
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <textarea class="form-control" asp-for="Description"></textarea>
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VisionId"></label>
+                    <select class="form-control form-select" asp-for="VisionId" asp-items="Model.Vision">
+                        <option value="">-- Choose --</option>
+                    </select>
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" asp-for="NewPhoto"></label></br>
+                    <input type="file" class="form-label" asp-for="NewPhoto">
+                    <span asp-validation-for="NewPhoto"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>

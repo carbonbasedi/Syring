@@ -1,12 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Services.User.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
 {
 	public class HomeController : Controller
 	{
-		public IActionResult Index()
+		private readonly IHomeService _homeService;
+
+		public HomeController(IHomeService homeService)
+        {
+			_homeService = homeService;
+		}
+        public async Task<IActionResult> Index()
 		{
-			return View();
+			var model = await _homeService.GelAllASync();
+			return View(model);
 		}
 	}
 }

@@ -18,7 +18,6 @@ namespace Business.ViewModels.Admin.Slider
 		[MaxLength(50)]
 		public string Subtitle { get; set; }
 
-		[Required]
 		public IFormFile? NewPhoto { get; set; }
         public string? Photo { get; set; }
         public DateTime ModifiedAt { get; set; }

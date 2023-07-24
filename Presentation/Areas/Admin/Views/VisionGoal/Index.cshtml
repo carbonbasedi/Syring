@@ -1,0 +1,45 @@
+﻿@using Business.ViewModels.Admin.VisionGoal
+@model VisionGoalListVM
+
+<div class="card shadow mb-4">
+	<div class="card-body">
+		<h1 class="h3 mb-2 text-gray-800">Vision Goal</h1>
+		<a class="btn btn-primary m-3" asp-action="create" asp-controller="visiongoal">Create</a>
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Created At</th>
+						<th>Modified At</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var visionGoal in Model.VisionGoals)
+					{
+						<tr>
+							<td>
+								@if (visionGoal.Photo is not null)
+								{
+									<img class="w-25" src="~/assets/img/@visionGoal.Photo">
+								}
+							</td>
+							<td>@visionGoal.Title</td>
+							<td>@visionGoal.Description</td>
+							<td>@visionGoal.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
+							<td>@visionGoal.UpdatedAt?.ToString("dd.MM.yyyy HH:mm:ss")</td>
+							<td>
+								<a asp-action="update" asp-controller="visiongoal" asp-route-id="@visionGoal.Id" class="btn btn-primary">Update</a>
+								<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="visiongoal" asp-route-id="@visionGoal.Id" class="btn btn-danger">Delete</a>
+								<a asp-action="details" asp-controller="visiongoal" asp-route-id="@visionGoal.Id" class="btn btn-info">Details</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

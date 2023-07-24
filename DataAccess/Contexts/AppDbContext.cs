@@ -17,5 +17,7 @@ namespace DataAccess.Contexts
         }
 
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Vision> Visions { get; set; }
+        public DbSet<VisionGoal> VisionGoals { get; set; }
     }
 }

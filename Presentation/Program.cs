@@ -1,5 +1,7 @@
-using Business.Services.Abstract.Admin;
-using Business.Services.Concrete.Admin;
+using Business.Services.Admin.Abstract;
+using Business.Services.Admin.Concrete;
+using Business.Services.User.Abstract;
+using Business.Services.User.Concrete;
 using Common.Entities;
 using Common.Utilities.File;
 using DataAccess.Contexts;
@@ -34,10 +36,15 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 #region Repositories
 builder.Services.AddScoped<ISliderRepository, SliderRepository>();
+builder.Services.AddScoped<IVisionRepository, VisionRepository>();
+builder.Services.AddScoped<IVisionGoalRepositiory, VisionGoalRepository>();
 #endregion
 
 #region Services
 builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IVisionService, VisionService>();
+builder.Services.AddScoped<IVisionGoalService, VisionGoalService>();
+builder.Services.AddScoped<IHomeService, HomeService>();
 #endregion
 
 #region app

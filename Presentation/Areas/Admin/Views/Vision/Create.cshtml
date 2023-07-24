@@ -1,0 +1,35 @@
+﻿@using Business.ViewModels.Admin.Vision
+@model VisionCreateVM
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Create Vision</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form asp-action="create" asp-controller="vision" method="post">
+                <div class="form-group">
+                    <label asp-for="SubHeader"></label>
+                    <input class="form-control" asp-for="SubHeader" />
+                    <span asp-validation-for="SubHeader"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Header"></label>
+                    <input class="form-control" asp-for="Header" />
+                    <span asp-validation-for="Header"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <input class="form-control" asp-for="Description" />
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

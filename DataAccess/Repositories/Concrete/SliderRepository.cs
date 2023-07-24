@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories.Concrete
 {
-	public class SliderRepository : Repository<Slider>, ISliderRepository
-	{
-		private readonly AppDbContext _context;
+    public class SliderRepository : Repository<Slider>, ISliderRepository
+    {
+        private readonly AppDbContext _context;
 
-		public SliderRepository(AppDbContext context) : base(context)
+        public SliderRepository(AppDbContext context) : base(context)
         {
-			_context = context;
-		}
+            _context = context;
+        }
 
-		public Slider GetSlider()
-		{
-			return _context.Sliders.FirstOrDefault(s => !s.IsDeleted);
-		}
-	}
+        public Slider GetSlider()
+        {
+            return _context.Sliders.FirstOrDefault(s => !s.IsDeleted);
+        }
+    }
 }

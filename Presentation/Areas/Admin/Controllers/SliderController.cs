@@ -1,11 +1,11 @@
-﻿using Business.Services.Abstract.Admin;
+﻿using Business.Services.Admin.Abstract;
 using Business.ViewModels.Admin.Slider;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace Presentation.Areas.Admin.Controllers
 {
-	[Area("Admin")]
+    [Area("Admin")]
 	public class SliderController : Controller
 	{
 		private readonly ISliderService _sliderService;
@@ -14,6 +14,8 @@ namespace Presentation.Areas.Admin.Controllers
 		{
 			_sliderService = sliderService;
 		}
+
+		[HttpGet]
 		public async Task<IActionResult> List()
 		{
 			var model = await _sliderService.GelAllASync();

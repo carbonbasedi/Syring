@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Services.Abstract.Admin
+namespace Business.Services.Admin.Abstract
 {
     public interface ISliderService
     {
@@ -14,6 +14,6 @@ namespace Business.Services.Abstract.Admin
         Task<bool> CreateAsync(SliderCreateVM model);
         Task<bool> DeleteAsync(int id);
         Task<SliderUpdateVM> UpdateAsync(int id);
-        Task<bool> UpdateAsync(SliderUpdateVM model,int id);
+        Task<bool> UpdateAsync(SliderUpdateVM model, int id);
     }
 }
