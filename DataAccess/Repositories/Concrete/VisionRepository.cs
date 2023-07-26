@@ -27,7 +27,7 @@ namespace DataAccess.Repositories.Concrete
 
 		public async Task<Vision> GetByNameAsync(string name)
 		{
-			return await _context.Visions.FirstOrDefaultAsync(v => v.Header.ToLower().Trim() == name.ToLower().Trim());
+			return await _context.Visions.FirstOrDefaultAsync(v => v.Header.ToLower().Trim() == name.ToLower().Trim() && !v.IsDeleted);
 		}
 
 		public async Task<Vision> GetWithGoalsAsync(int id)

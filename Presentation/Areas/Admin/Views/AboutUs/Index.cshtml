@@ -1,0 +1,45 @@
+﻿@using Business.ViewModels.Admin.AboutUs
+@model AboutUsIndexVM
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">About Us</h1>
+	<a class="btn btn-primary m-3" asp-action="create" asp-controller="aboutus">Create</a>
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Sub Header</th>
+							<th>Header</th>
+							<th>Created At</th>
+							<th>Modified At</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var aboutUs in Model.AboutUs)
+						{
+							<tr>
+								<td>@aboutUs.SubHeader</td>
+								<td>@aboutUs.Header</td>
+								<td>@aboutUs.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
+								<td>@aboutUs.UpdatedAt?.ToString("dd.MM.yyyy HH:mm:ss")</td>
+								<td>
+									<a asp-action="update" asp-controller="aboutus" asp-route-id="@aboutUs.Id" class="btn btn-primary">Update</a>
+									<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="aboutus" asp-route-id="@aboutUs.Id" class="btn btn-danger">Delete</a>
+									<a asp-action="details" asp-controller="aboutus" asp-route-id="@aboutUs.Id" class="btn btn-primary">Details</a>
+
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.container-fluid -->

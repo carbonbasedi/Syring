@@ -53,7 +53,7 @@ namespace Business.Services.Admin.Concrete
 			var vision = await _visionRepository.GetByNameAsync(model.Header);
 			if (vision is not null)
 			{
-				_modelState.AddModelError("Name", "Category under this name already exists in database");
+				_modelState.AddModelError("Header", "Vision under this name already exists in database");
 				return false;
 			}
 

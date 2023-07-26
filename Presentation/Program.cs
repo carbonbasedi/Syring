@@ -38,13 +38,21 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ISliderRepository, SliderRepository>();
 builder.Services.AddScoped<IVisionRepository, VisionRepository>();
 builder.Services.AddScoped<IVisionGoalRepositiory, VisionGoalRepository>();
+builder.Services.AddScoped<IAboutUsRepository, AboutUsRepository>();
+builder.Services.AddScoped<IAboutUsPhotosRepository, AboutUsPhotosRepository>();
+builder.Services.AddScoped<IFaqCategoryRepository, FaqCategoryRepository>();
+builder.Services.AddScoped<IFaqRepository, FaqRepository>();
 #endregion
 
 #region Services
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IVisionService, VisionService>();
 builder.Services.AddScoped<IVisionGoalService, VisionGoalService>();
+builder.Services.AddScoped<IAboutUsService, AboutUsService>();
+builder.Services.AddScoped<IFaqCategoryService, FaqCategoryService>();
+builder.Services.AddScoped<IFaqService, FaqService>();
 builder.Services.AddScoped<IHomeService, HomeService>();
+builder.Services.AddScoped<IFaqPageService, FaqPageService>();
 #endregion
 
 #region app

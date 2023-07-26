@@ -14,12 +14,15 @@ namespace Business.Services.User.Concrete
 	{
 		private readonly ISliderRepository _sliderRepository;
 		private readonly IVisionRepository _visionRepository;
+		private readonly IAboutUsRepository _aboutUsRepository;
 
 		public HomeService(ISliderRepository sliderRepository,
-							IVisionRepository visionRepository)
+							IVisionRepository visionRepository,
+							IAboutUsRepository aboutUsRepository)
         {
 			_sliderRepository = sliderRepository;
 			_visionRepository = visionRepository;
+			_aboutUsRepository = aboutUsRepository;
 		}
         public async Task<HomeIndexVM> GelAllASync()
 		{

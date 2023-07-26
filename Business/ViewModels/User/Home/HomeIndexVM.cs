@@ -13,8 +13,10 @@ namespace Business.ViewModels.User.Home
         {
             Sliders = new List<Slider>();
             Vision = new List<Vision>();
+            AboutUs = new List<AboutUs>();
         }
         public List<Slider> Sliders { get; set; }
         public List<Vision> Vision { get; set; }
+        public List<AboutUs> AboutUs { get; set; }
     }
 }

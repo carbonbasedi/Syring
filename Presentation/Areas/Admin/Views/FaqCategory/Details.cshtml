@@ -1,0 +1,47 @@
+﻿@using Business.ViewModels.Admin.FaqCategory
+@model FaqCategoryDetailsVM
+
+<div class="m-4 form-group">
+	<a class="btn btn-primary" asp-action="list" asp-controller="faqcategory">Return to list</a>
+	<h1>Title</h1>
+	<p>@Model.Title</p>
+	<br />
+	<h1>About</h1>
+	<p>@Model.About</p>
+	<br />
+	<h1>Created At</h1>
+	<p>@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</p>
+	<br />
+	<h1>Modified At</h1>
+	<p>@Model.ModifiedAt?.ToString("dd.MM.yyyy HH:mm:ss")</p>
+
+	<div class="table-responsive">
+		<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Created At</th>
+					<th>Modified At</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var faq in Model.Faqs)
+				{
+					<tr>
+						<td>@faq.Title</td>
+						<td>@faq.Description</td>
+						<td>@faq.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
+						<td>@faq.UpdatedAt?.ToString("dd.MM.yyyy HH:mm:ss")</td>
+						<td>
+							<a asp-action="update" asp-controller="faq" asp-route-id="@faq.Id" class="btn btn-primary">Update</a>
+							<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="faq" asp-route-id="@faq.Id" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+
+</div>
