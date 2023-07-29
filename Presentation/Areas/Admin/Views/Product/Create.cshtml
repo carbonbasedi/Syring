@@ -1,0 +1,46 @@
+﻿@using Business.ViewModels.Admin.Product
+@model ProductCreateVM
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Create Product</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form enctype="multipart/form-data" asp-action="create" asp-controller="product" method="post">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input class="form-control" asp-for="Name">
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Stock"></label>
+                    <input type="number" class="form-control" asp-for="Stock">
+                    <span asp-validation-for="Stock"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price"></label>
+                    <input type="number" step=".01" class="form-control" asp-for="Price">
+                    <span asp-validation-for="Price"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId"></label>
+                    <select class="form-control form-select" asp-for="CategoryId" asp-items="Model.Category">
+                        <option value="">-- Choose --</option>
+                    </select>
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" asp-for="Image"></label></br>
+                    <input type="file" class="form-label" asp-for="Image">
+                    <span asp-validation-for="Image"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+
+</div>

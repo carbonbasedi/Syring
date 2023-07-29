@@ -1,0 +1,48 @@
+﻿@using Business.ViewModels.Admin.Plan
+@using Common.Constants;
+@model PlanCreateVM
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Create Plan</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form asp-action="create" asp-controller="plan" method="post">
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <input class="form-control" asp-for="Title">
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Value"></label>
+                    <input type="number" step=".01" class="form-control" asp-for="Value">
+                    <span asp-validation-for="Value"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubTitle"></label>
+                    <input class="form-control" asp-for="SubTitle">
+                    <span asp-validation-for="SubTitle"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PriceUnit"></label>
+                    <select class="form-control form-select" asp-for="PriceUnit" asp-items="Html.GetEnumSelectList<PriceUnit>()">
+                        <option value="">-- Choose --</option>
+                    </select>
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Period"></label>
+                    <select class="form-control form-select" asp-for="Period" asp-items="Html.GetEnumSelectList<Period>()">
+                        <option value="">-- Choose --</option>
+                    </select>
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+
+</div>

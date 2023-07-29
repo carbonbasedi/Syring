@@ -17,7 +17,7 @@ namespace DataAccess.UnitOfWork
 		}
 		public async Task CommitAsync()
 		{
-			_context.SaveChanges();
+			await _context.SaveChangesAsync();
 		}
 	}
 }

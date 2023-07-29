@@ -1,0 +1,54 @@
+﻿@using Business.ViewModels.Admin.Plan
+@model PlanDetailsVM
+
+<div class="m-4 form-group">
+	<a class="btn btn-primary" asp-action="index" asp-controller="plan">Return to list</a>
+	<h1>Title</h1>
+	<p>@Model.Title</p>
+	<br />
+	<h1>Subtitle</h1>
+	<p>@Model.SubTitle</p>
+	<br />
+	<h1>Price and Unit</h1>
+	<p>@Model.Value  @Model.PriceUnit</p>
+	<br />
+	<h1>Payment period</h1>
+	<p>@Model.Period</p>
+	<br />
+	<h1>Created At</h1>
+	<p>@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</p>
+	<br />
+	<h1>Modified At</h1>
+	<p>@Model.ModifiedAt?.ToString("dd.MM.yyyy HH:mm:ss")</p>
+
+	@if (Model.PlanFeatures.Count == 0)
+	{
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Feature</th>
+						<th>Created At</th>
+						<th>Modified At</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var feature in Model.PlanFeatures)
+					{
+						<tr>
+							<td>@feature.Feature</td>
+							<td>@feature.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
+							<td>@feature.UpdatedAt?.ToString("dd.MM.yyyy HH:mm:ss")</td>
+							<td>
+								<a asp-action="update" asp-controller="planfeature" asp-route-id="@feature.Id" class="btn btn-primary">Update</a>
+								<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="planfeature" asp-route-id="@feature.Id" class="btn btn-danger">Delete</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	}
+
+</div>

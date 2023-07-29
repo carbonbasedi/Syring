@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-	public class DbIntializer
+	public class DbInitializer
 	{
-		public async static Task SeedAsync(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
+		public async static Task SeedAsync(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)
 		{
 			await SeedRolesAsync(roleManager);
 			await SeedUsersAsync(userManager);
@@ -29,7 +29,7 @@ namespace Common
 				}
 			}
 		}
-		private async static Task SeedUsersAsync(UserManager<User> userManager)
+		private async static Task SeedUsersAsync(UserManager<IdentityUser> userManager)
 		{
 			var user = await userManager.FindByNameAsync("Admin");
 			if (user is null)
@@ -40,7 +40,7 @@ namespace Common
 					Email = "admin@gmail.com",
 				};
 
-				var result = await userManager.CreateAsync(user, "Admin1234!");
+				var result = await userManager.CreateAsync(user, "Admin123!");
 
 				if (!result.Succeeded)
 				{

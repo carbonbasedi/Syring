@@ -1,11 +1,14 @@
 ﻿using Business.Services.Admin.Abstract;
 using Business.ViewModels.Admin.Slider;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 
 namespace Presentation.Areas.Admin.Controllers
 {
     [Area("Admin")]
+
 	public class SliderController : Controller
 	{
 		private readonly ISliderService _sliderService;
