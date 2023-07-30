@@ -19,6 +19,8 @@ namespace Business.ViewModels.Admin.VisionGoal
 
         [Required]
         public IFormFile Photo { get; set; }
+
+        [Display(Name ="Vision")]
         public int VisionId { get; set; }
         public List<SelectListItem>? Vision { get; set; }
         public DateTime CreatedAt { get; set; }

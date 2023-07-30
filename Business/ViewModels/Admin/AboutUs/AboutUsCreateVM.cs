@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace Business.ViewModels.Admin.AboutUs
 {
-	public class AboutUsCreateVM
-	{
+    public class AboutUsCreateVM
+    {
         public AboutUsCreateVM()
         {
             Photos = new List<IFormFile>();
         }
         [Required]
+        [Display(Name = "Sub Header")]
         public string SubHeader { get; set; }
 
         [Required]
@@ -27,6 +28,7 @@ namespace Business.ViewModels.Admin.AboutUs
         public string Description { get; set; }
 
         [Required]
+        [Display(Name = "Signature")]
         public IFormFile SignatureImg { get; set; }
 
         [Required]

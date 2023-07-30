@@ -17,8 +17,11 @@ namespace Business.ViewModels.Admin.VisionGoal
 		[Required]
 		public string Description { get; set; }
 
+		[Display(Name ="New Photo")]
 		public IFormFile? NewPhoto { get; set; }
         public string? Photo { get; set; }
+
+		[Display(Name ="Vision")]
         public int VisionId { get; set; }
 		public List<SelectListItem>? Vision { get; set; }
 		public DateTime CreatedAt { get; set; }

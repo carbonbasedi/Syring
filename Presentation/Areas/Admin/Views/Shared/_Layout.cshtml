@@ -45,10 +45,51 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Components:</h6>
-						<a class="collapse-item" asp-action="index" asp-controller="productcategory">
-							<span>Product Category</span>
-						</a>
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h7 class="collapse-header">Home Page</h7>
+							<a class="collapse-item" asp-action="list" asp-controller="slider">
+								<span>Slider</span>
+							</a>
+							<a class="collapse-item" asp-action="index" asp-controller="vision">
+								<span>Vision</span>
+							</a>
+							<a class="collapse-item" asp-action="index" asp-controller="visiongoal">
+								<span>Vision Goal</span>
+							</a>
+							<a class="collapse-item" asp-action="index" asp-controller="aboutus">
+								<span>About Us</span>
+							</a>
+						</div>
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h7 class="collapse-header">Faq Page</h7>
+							<a class="collapse-item" asp-action="list" asp-controller="faqcategory">
+								<span>Faq Category</span>
+							</a>
+							<a class="collapse-item" asp-action="list" asp-controller="faq">
+								<span>Faq</span>
+							</a>
+						</div>
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h7 class="collapse-header">Pricing Page</h7>
+							<a class="collapse-item" asp-action="index" asp-controller="pricingpage">
+								<span>Pricing Page About</span>
+							</a>
+							<a class="collapse-item" asp-action="list" asp-controller="plan">
+								<span>Plan Packets</span>
+							</a>
+							<a class="collapse-item" asp-action="list" asp-controller="planfeature">
+								<span>Plan Features</span>
+							</a>
+						</div>
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h7 class="collapse-header">Shop Page</h7>
+							<a class="collapse-item" asp-action="list" asp-controller="productcategory">
+								<span>Product Category</span>
+							</a>
+							<a class="collapse-item" asp-action="list" asp-controller="product">
+								<span>Product</span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</li>
@@ -57,11 +98,11 @@
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
 				   aria-expanded="true" aria-controls="collapsePages">
 					<i class="fas fa-fw fa-folder"></i>
-					<span>Authentication</span>
+					<span>Components</span>
 				</a>
 				<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Users and Roles:</h6>
+						<h6 class="collapse-header"></h6>
 						<a class="collapse-item" asp-action="index" asp-controller="user">
 							<span>User</span>
 						</a>

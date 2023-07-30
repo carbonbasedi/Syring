@@ -10,6 +10,7 @@ namespace Business.ViewModels.Admin.Vision
 	public class VisionUpdateVM
 	{
 		[Required]
+		[Display(Name ="Sub Header")]
 		public string SubHeader { get; set; }
 
 		[Required]

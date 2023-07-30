@@ -18,38 +18,40 @@
 	<h1>Modified At</h1>
 	<p>@Model.ModifiedAt?.ToString("dd.MM.yyyy HH:mm:ss")</p>
 
-	<div class="table-responsive">
-		<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-			<thead>
-				<tr>
-					<th>Title</th>
-					<th>Description</th>
-					<th>Photo</th>
-					<th>Created At</th>
-					<th>Modified At</th>
-					<th>Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach (var goal in Model.VisionGoals)
-				{
+	@if (Model.VisionGoals.Count != 0)
+	{
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
 					<tr>
-						<td>@goal.Title</td>
-						<td>@goal.Description</td>
-						<td>
-							<img class="w-25" src="~/assets/img/@goal.Photo" alt="">
-						</td>
-						<td>@goal.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
-						<td>@goal.UpdatedAt?.ToString("dd.MM.yyyy HH:mm:ss")</td>
-						<td>
-							<a asp-action="update" asp-controller="visiongoal" asp-route-id="@goal.Id" class="btn btn-primary">Update</a>
-							<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="visiongoal" asp-route-id="@goal.Id" class="btn btn-danger">Delete</a>
-							<a asp-action="details" asp-controller="visiongoal" asp-route-id="@goal.Id" class="btn btn-info">Details</a>
-						</td>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Photo</th>
+						<th>Created At</th>
+						<th>Modified At</th>
+						<th>Actions</th>
 					</tr>
-				}
-			</tbody>
-		</table>
-	</div>
+				</thead>
+				<tbody>
+					@foreach (var goal in Model.VisionGoals)
+					{
+						<tr>
+							<td>@goal.Title</td>
+							<td>@goal.Description</td>
+							<td>
+								<img class="w-25" src="~/assets/img/@goal.Photo" alt="">
+							</td>
+							<td>@goal.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
+							<td>@goal.UpdatedAt?.ToString("dd.MM.yyyy HH:mm:ss")</td>
+							<td>
+								<a asp-action="update" asp-controller="visiongoal" asp-route-id="@goal.Id" class="btn btn-primary">Update</a>
+								<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="visiongoal" asp-route-id="@goal.Id" class="btn btn-danger">Delete</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	}
 
 </div>

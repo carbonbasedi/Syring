@@ -15,8 +15,8 @@ namespace Business.ViewModels.Admin.AboutUs
         {
 			NewPhotos = new List<IFormFile>();
         }
-        public int MyProperty { get; set; }
         [Required]
+		[Display(Name = "Sub Header")]
 		public string SubHeader { get; set; }
 
 		[Required]
@@ -27,8 +27,12 @@ namespace Business.ViewModels.Admin.AboutUs
 
 		[Required]
 		public string Description { get; set; }
+
+		[Display(Name = "Signature")]
 		public IFormFile? NewSignatureImg { get; set; }
         public string? SignatureImg { get; set; }
+
+		[Display(Name = "Photos")]
 		public List<IFormFile>? NewPhotos { get; set; }
         public List<AboutUsPhotos>? Photos { get; set; }
 		public bool IsMainPhoto { get; set; }
