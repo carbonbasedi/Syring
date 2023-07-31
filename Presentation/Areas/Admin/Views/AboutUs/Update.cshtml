@@ -49,7 +49,6 @@
 							<thead>
 								<tr>
 									<th>Photo</th>
-									<th>Order</th>
 									<th>Created At</th>
 									<th>Actions</th>
 								</tr>
@@ -60,23 +59,12 @@
 									<tr>
 										<td>
 											<img class="w-25" src="~/assets/img/@photo.Name">
-											<div class="form-check">
-												<input class="form-check-input" asp-for="@photo.IsMain" />
-												<label class="form-check-label">@photo.Name</label>
-											</div>
 										</td>
 										<td>@photo.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
 										<td>
-											<a asp-action="updatephoto" asp-controller="product" asp-route-id="@photo.Id" class="btn btn-primary">Update</a>
-											<a asp-action="setmain" asp-controller="product" asp-route-id="@photo.Id" class="btn btn-info">Set as Main</a>
-											<a asp-action="deletephoto" asp-controller="product" asp-route-id="@photo.Id" onclick="return DeleteConfirmation()" class="btn btn-danger">Delete</a>
+											<a asp-action="setmain" asp-controller="aboutus" asp-route-id="@photo.Id" class="btn btn-info">Set as Main</a>
 										</td>
-
 									</tr>
-								}
-								@foreach (var photo in Model.Photos)
-								{
-									<span asp-validation-for="@photo.IsMain" class="text-danger"></span>
 								}
 							</tbody>
 						</table>

@@ -9,10 +9,11 @@ namespace Business.Services.Admin.Abstract
 {
 	public interface IAboutUsService
 	{
-		Task<AboutUsIndexVM> GelAllASync();
+		Task<AboutUsIndexVM> GetAllAsync();
 		Task<bool> CreateAsync(AboutUsCreateVM model);
 		Task<bool> DeleteAsync(int id);
 		Task<AboutUsUpdateVM> UpdateAsync(int id);
 		Task<bool> UpdateAsync(AboutUsUpdateVM model,int id);
+		Task<bool> SetMain(int id);
 	}
 }

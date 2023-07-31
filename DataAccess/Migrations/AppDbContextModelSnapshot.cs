@@ -104,6 +104,51 @@ namespace DataAccess.Migrations
                     b.ToTable("AboutUsPhotos");
                 });
 
+            modelBuilder.Entity("Common.Entities.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("Common.Entities.BasketProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketProducts");
+                });
+
             modelBuilder.Entity("Common.Entities.Faq", b =>
                 {
                     b.Property<int>("Id")
@@ -682,6 +727,36 @@ namespace DataAccess.Migrations
                     b.Navigation("AboutUs");
                 });
 
+            modelBuilder.Entity("Common.Entities.Basket", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Common.Entities.BasketProduct", b =>
+                {
+                    b.HasOne("Common.Entities.Basket", "Basket")
+                        .WithMany("BasketProducts")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Common.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Basket");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Common.Entities.Faq", b =>
                 {
                     b.HasOne("Common.Entities.FaqCategory", "Category")
@@ -780,6 +855,11 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Common.Entities.AboutUs", b =>
                 {
                     b.Navigation("Photos");
+                });
+
+            modelBuilder.Entity("Common.Entities.Basket", b =>
+                {
+                    b.Navigation("BasketProducts");
                 });
 
             modelBuilder.Entity("Common.Entities.FaqCategory", b =>

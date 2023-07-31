@@ -26,7 +26,7 @@ namespace Business.Services.User.Concrete
 			var model = new PricingPageIndexVM
 			{
 				Pages = await _pageRepository.GetAllAsync(),
-				Plans = await _planRepository.GetAllAsync()
+				Plans = await _planRepository.GetAllWithFeatures()
 			};
 
 			return model;

@@ -13,6 +13,7 @@
 				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 					<thead>
 						<tr>
+							<th>Front Photo</th>
 							<th>Sub Header</th>
 							<th>Header</th>
 							<th>Created At</th>
@@ -24,6 +25,15 @@
 						@foreach (var aboutUs in Model.AboutUs)
 						{
 							<tr>
+								<td>
+									@foreach(var photo in aboutUs.Photos)
+									{
+										if (photo.IsMain)
+										{
+										<img class="w-25" src="~/assets/img/@photo.Name">
+										}
+									}
+								</td>
 								<td>@aboutUs.SubHeader</td>
 								<td>@aboutUs.Header</td>
 								<td>@aboutUs.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</td>
@@ -31,8 +41,6 @@
 								<td>
 									<a asp-action="update" asp-controller="aboutus" asp-route-id="@aboutUs.Id" class="btn btn-primary">Update</a>
 									<a onclick="return DeleteConfirmation()" asp-action="delete" asp-controller="aboutus" asp-route-id="@aboutUs.Id" class="btn btn-danger">Delete</a>
-									<a asp-action="details" asp-controller="aboutus" asp-route-id="@aboutUs.Id" class="btn btn-primary">Details</a>
-
 								</td>
 							</tr>
 						}

@@ -17,7 +17,7 @@ namespace Presentation.Areas.Admin.Controllers
 		[HttpGet]
         public async Task<IActionResult> Index()
 		{
-			var model = await _aboutUsService.GelAllASync();
+			var model = await _aboutUsService.GetAllAsync();
 			return View(model);
 		}
 
@@ -61,6 +61,15 @@ namespace Presentation.Areas.Admin.Controllers
 			if (isSucceeded) return RedirectToAction(nameof(Index));
 
 			return View(model);
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> SetMain(int id)
+		{
+			var isSucceeded = await _aboutUsService.SetMain(id);
+			if (isSucceeded) return RedirectToAction(nameof(Index));
+
+			return NotFound();
 		}
 	}
 }

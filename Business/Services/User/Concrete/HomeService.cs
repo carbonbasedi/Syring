@@ -29,7 +29,8 @@ namespace Business.Services.User.Concrete
 			var model = new HomeIndexVM
 			{
 				Sliders = await _sliderRepository.GetAllAsync(),
-				Vision = await _visionRepository.GetAllWithGoals()
+				Vision = await _visionRepository.GetAllWithGoals(),
+				AboutUs = await _aboutUsRepository.GetAboutUsWithPhotos(),
 			};
 
 			return model;

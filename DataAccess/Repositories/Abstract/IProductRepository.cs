@@ -14,6 +14,7 @@ namespace DataAccess.Repositories.Abstract
 		Task<Product> GetByNameAsync(string name);
 		Task<ProductCategory> GetCategoryAsync(int id);
 		Task<Product> GetProductWithCategoriesAsync(int id);
-		Task<List<Product>> GetAllWithCategoryAsync(int? id);
+		Task<IQueryable<Product>> FilterProductsByTitle(string? title);
+		Task<IQueryable<Product>> FilterProductsByCategory(IQueryable<Product> products,List<int> ids);
 	}
 }

@@ -12,5 +12,6 @@ namespace DataAccess.Repositories.Abstract
 	{
 		Task<AboutUs> GetByNameAsync(string name);
 		Task<AboutUs> GetWithPhotos(int id);
+		Task<List<AboutUs>> GetAboutUsWithPhotos();
 	}
 }

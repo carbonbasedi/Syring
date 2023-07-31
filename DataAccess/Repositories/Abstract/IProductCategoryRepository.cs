@@ -1,5 +1,6 @@
 ﻿using Common.Entities;
 using DataAccess.Repositories.Base;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace DataAccess.Repositories.Abstract
 	{
 		Task<ProductCategory> GetByNameAsync(string name);
 		Task<ProductCategory> GetWithProducts(int id);
+		Task<List<SelectListItem>> GetCategorySelectList();
 	}
 }

@@ -75,6 +75,8 @@ builder.Services.AddScoped<IPlanRepository, PlanRepository>();
 builder.Services.AddScoped<IPlanFeatureRepository, PlanFeatureRepository>();
 builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+builder.Services.AddScoped<IBasketProductRepository, BasketProductRepository>();
 #endregion
 
 #region AdminServices
@@ -98,6 +100,7 @@ builder.Services.AddScoped<IFaqPageService, FaqPageService>();
 builder.Services.AddScoped<IPricingService, PricingService>();
 builder.Services.AddScoped<IShopService, ShopService>();
 builder.Services.AddScoped<IUserAccountService, UserAccountService>();
+builder.Services.AddScoped<ICartService, CartService>();
 #endregion
 
 #region app

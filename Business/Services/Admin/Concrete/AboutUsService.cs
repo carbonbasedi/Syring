@@ -36,11 +36,11 @@ namespace Business.Services.Admin.Concrete
 			_aboutUsPhotosRepository = aboutUsPhotosRepository;
 		}
 
-		public async Task<AboutUsIndexVM> GelAllASync()
+		public async Task<AboutUsIndexVM> GetAllAsync()
 		{
 			var model = new AboutUsIndexVM
 			{
-				AboutUs = await _aboutUsRepository.GetAllAsync()
+				AboutUs = await _aboutUsRepository.GetAboutUsWithPhotos()
 			};
 
 			return model;
@@ -96,12 +96,18 @@ namespace Business.Services.Admin.Concrete
 				await _aboutUsPhotosRepository.CreateAsync(photos);
 			}
 
-			var dbAboutUs = await _aboutUsRepository.GetAllAsync();
+			var dbAboutUs = await _aboutUsRepository.GetAboutUsWithPhotos();
 			foreach (var dbAbout in dbAboutUs)
 			{
 				dbAbout.IsDeleted = true;
 				_aboutUsRepository.Update(dbAbout);
-			}
+                foreach (var photo in dbAbout.Photos)
+                {
+					_aboutUsPhotosRepository.SoftDelete(photo);
+					_fileService.Delete(photo.Name);
+					_aboutUsPhotosRepository.Update(photo);
+                }
+            }
 
 			await _aboutUsRepository.CreateAsync(aboutUs);
 			await _unitOfWork.CommitAsync();
@@ -145,7 +151,7 @@ namespace Business.Services.Admin.Concrete
 				About = aboutUs.About,
 				Description = aboutUs.Description,
 				SignatureImg = aboutUs.SignatureImg,
-				Photos = aboutUs.Photos.ToList()
+				Photos = aboutUs.Photos.ToList(),
 			};
 
 			return model;
@@ -181,7 +187,7 @@ namespace Business.Services.Admin.Concrete
 				}
 				aboutUs.SignatureImg = _fileService.Upload(model.NewSignatureImg);
 			}
-			if(model.NewPhotos is not null)
+			if (model.NewPhotos is not null)
 			{
 				foreach (var photo in model.NewPhotos)
 				{
@@ -196,22 +202,42 @@ namespace Business.Services.Admin.Concrete
 						_modelState.AddModelError("Photos", "File size is over 200kb");
 						return false;
 					}
-;
-					foreach (var newPhotos in model.NewPhotos)
+					var photos = new AboutUsPhotos
 					{
-						var photos = new AboutUsPhotos
-						{
-							Name = _fileService.Upload(newPhotos),
-							CreatedAt = DateTime.Now,
-							AboutUs = aboutUs,
-							IsMain = model.IsMainPhoto
-						};
-						await _aboutUsPhotosRepository.CreateAsync(photos);
-					}
+						Name = _fileService.Upload(photo),
+						CreatedAt = DateTime.Now,
+						AboutUs = aboutUs
+					};
+					await _aboutUsPhotosRepository.CreateAsync(photos);
+
 				}
 			}
 
 			_aboutUsRepository.Update(aboutUs);
+			await _unitOfWork.CommitAsync();
+
+			return true;
+		}
+
+		public async Task<bool> SetMain(int id)
+		{
+			var photos = await _aboutUsPhotosRepository.GetPhotosWithCategory(id);
+			if(photos is null) return false;
+
+			var dbProductPhotos = _aboutUsPhotosRepository.GetAllPhotosWithCategory().Result.Where(p => p.Id != photos.Id && p.AboutUsId == photos.AboutUsId);
+
+			if(!photos.IsMain)
+			{
+				foreach(var photo in dbProductPhotos)
+				{
+					photo.IsMain = false;
+					_aboutUsPhotosRepository.Update(photo);
+				}
+				await _unitOfWork.CommitAsync();
+			}
+
+			photos.IsMain = !photos.IsMain;
+			_aboutUsPhotosRepository.Update(photos);
 			await _unitOfWork.CommitAsync();
 
 			return true;

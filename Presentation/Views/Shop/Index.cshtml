@@ -29,75 +29,71 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="left-sidebar">
-						<div class="search">
-							<h4>Search</h4>
-							<div class="search-product">
-								<input type="search" name="" id="" placeholder="Search products"
-									   class="search-product-input">
-								<img src="~/assets/images/search-product-icon.png" alt="" class="search-product-icon">
+						<form method="get" asp-action="index" asp-controller="shop">
+							<div class="search">
+								<h4>Search</h4>
+								<div class="search-product">
+									<input type="search" asp-for="Title" placeholder="Search products"
+										   class="search-product-input">
+									<img src="~/assets/images/search-product-icon.png" alt="" class="search-product-icon">
+								</div>
 							</div>
-						</div>
-						@if (Model.ProductCategories.Count != 0)
-						{
 							<div class="categories">
 								<h4>Product categories</h4>
-								<ul>
-									@foreach (var category in Model.ProductCategories)
-									{
-										<li><a href="javascript:void(0);" onclick="loadProductsByCategoryId('@category.Id')">@category.Title</a></li>
-									}
-								</ul>
+								<div class="row">
+									<div class="col-6">
+										<div class="form-group">
+											<label asp-for="CategoryIds"></label>
+											<select asp-for="CategoryIds" asp-items="Model.Categories" multiple="multiple">
+											</select>
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary">Search</button>
 							</div>
-						}
+						</form>
 					</div>
 				</div>
 				<div class="col-lg-9 products-side">
 					<div class="row">
-						<div class="col-lg-4 col-md-6 pb-5">
-							<div class="productt" id="1">
-								<div class="product-image"
-									 style="background-image: url(assets/images/product-1.jpg);">
-									<div class="basket-wishlist-compare d-flex justify-content-center">
-										<div class="add-basket text-center">
-											<i class="fas fa-shopping-basket"></i>
+						@foreach (var product in Model.Products)
+						{
+							<div class="col-lg-4 col-md-6 pb-5">
+								<div class="productt" id="1">
+									<div class="product-image"
+										 style="background-image: url('@Url.Content("~/assets/img/" + product.Image)');">
+										<div class="basket-wishlist-compare d-flex justify-content-center">
+											<div id="addToCart" data-id="@product.Id" class="add-basket text-center">
+												<i class="fas fa-shopping-basket"></i>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="product-inf">
-									<h5 class="productt-name">A Omron 3 Series Blood Pressure</h5>
-									<p><span>$</span><span class="price">39.99</span></p>
+									<div class="product-inf">
+										<h5 class="productt-name">@product.Name</h5>
+										<p><span>$</span><span class="price">@product.Price</span></p>
+									</div>
 								</div>
 							</div>
-							<div id="productViewComponentContainer">
-								@* Initial load of products using the default category (if needed) *@
-								@await Component.InvokeAsync("Product")
-							</div>
-						</div>
-						<div class="pagination d-flex justify-content-center">
-							<div class="pagination-element pagination-active">1</div>
-							<div class="pagination-element">2</div>
-							<div class="pagination-element">></div>
-						</div>
+						}
 					</div>
-					<div id="productViewComponentContainer"></div>
 				</div>
 			</div>
 	</section>
 	<!-- products section ends -->
 </main>
 <!-- main ends -->
-@section Scripts {
+@section Scripts{
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="~/js/basket.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
 	<script>
-		function loadProductsByCategoryId(categoryId) {
-			var container = document.getElementById('productViewComponentContainer');
-			container.innerHTML = ''; // Clear the container before loading new products
-
-			fetch(`/Products/GetProductsByCategory?categoryId=${categoryId}`)
-				.then(response => response.text())
-				.then(html => {
-					container.innerHTML = html;
-				})
-				.catch(error => console.error('Error loading products:', error));
-		}
+		$(document).ready(function () {
+			$('#CategoryIds').multiselect({
+				includeSelectAllOption: true,
+			});
+		});
 	</script>
 }

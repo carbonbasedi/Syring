@@ -28,5 +28,9 @@ namespace DataAccess.Repositories.Concrete
 		{
 			return await _context.AboutUs.Include(v => v.Photos).FirstOrDefaultAsync(v => v.Id == id && !v.IsDeleted);
 		}
+		public async Task<List<AboutUs>> GetAboutUsWithPhotos()
+		{
+			return await _context.AboutUs.Include(p => p.Photos).Where(p => !p.IsDeleted).ToListAsync();
+		}
 	}
 }

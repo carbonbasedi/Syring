@@ -8509,8 +8509,16 @@
       "PackagePath": "staticwebassets\\assets\\images\\why-choose-photo.jpg"
     },
     {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\008ceed8-f6d5-4747-ac91-c6c5fa4a8a37 avatar-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\008ceed8-f6d5-4747-ac91-c6c5fa4a8a37 avatar-4.jpg"
+    },
+    {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\0cf69b22-514e-4b2e-be34-cfdb2c76f282 about-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\0cf69b22-514e-4b2e-be34-cfdb2c76f282 about-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\18d19407-226a-42c5-8adc-dc50bd0e4551 product-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\18d19407-226a-42c5-8adc-dc50bd0e4551 product-4.jpg"
     },
     {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\284cbb0e-1507-4e27-86cb-e63f9e619f4a clinic-tooth.png",
@@ -8537,6 +8545,22 @@
       "PackagePath": "staticwebassets\\assets\\img\\715b8f65-41f6-461f-b517-a3e434236d42 avatar-3.jpg"
     },
     {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\73eb406e-34b2-458c-9882-a672d606bc5a signature.png",
+      "PackagePath": "staticwebassets\\assets\\img\\73eb406e-34b2-458c-9882-a672d606bc5a signature.png"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\76b0808a-23cf-47ca-b48b-235bf5b2b0ed about-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\76b0808a-23cf-47ca-b48b-235bf5b2b0ed about-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\89cdc0a6-4a45-406b-872e-0149563d8ade avatar-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\89cdc0a6-4a45-406b-872e-0149563d8ade avatar-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\92c1c40b-6635-4369-a54c-3427b4e428e8 about-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\92c1c40b-6635-4369-a54c-3427b4e428e8 about-2.jpg"
+    },
+    {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\93a3e9fc-2b9b-40b8-9b5b-c58105f16119 about-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\93a3e9fc-2b9b-40b8-9b5b-c58105f16119 about-1.jpg"
     },
@@ -8545,12 +8569,36 @@
       "PackagePath": "staticwebassets\\assets\\img\\a6dfaa40-0c0f-4751-abae-474cdbba488b banner-image-2.jpg"
     },
     {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\b1c2f12d-e841-463c-a106-57611acbaf20 avatar-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\b1c2f12d-e841-463c-a106-57611acbaf20 avatar-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\b9227367-79e2-4ba0-83af-e9a46b49ebc1 avatar-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\b9227367-79e2-4ba0-83af-e9a46b49ebc1 avatar-4.jpg"
+    },
+    {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\bda69f33-c40d-4d1e-b845-07e4083b3b10 clinic-heart.png",
       "PackagePath": "staticwebassets\\assets\\img\\bda69f33-c40d-4d1e-b845-07e4083b3b10 clinic-heart.png"
     },
     {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\c18f3a06-d690-4196-a34a-40a8234ae3ee product-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\c18f3a06-d690-4196-a34a-40a8234ae3ee product-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\d0d0716c-3a21-4efb-a5a2-7b1e19820a12 avatar-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\d0d0716c-3a21-4efb-a5a2-7b1e19820a12 avatar-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\de7c305d-dfe7-44b2-9568-622349bba480 avatar-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\de7c305d-dfe7-44b2-9568-622349bba480 avatar-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\e5233988-1ade-47c0-ac68-3ce2fa95de16 product-single1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\e5233988-1ade-47c0-ac68-3ce2fa95de16 product-single1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\feadd4f4-b7af-4fb0-8082-95033375b314 product-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\feadd4f4-b7af-4fb0-8082-95033375b314 product-2.jpg"
     },
     {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\slick\\ajax-loader.gif",
@@ -8595,6 +8643,10 @@
     {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\css\\style.css.map",
       "PackagePath": "staticwebassets\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\js\\basket.js",
+      "PackagePath": "staticwebassets\\js\\basket.js"
     },
     {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\js\\calendar.js",

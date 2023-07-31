@@ -12,5 +12,6 @@ namespace DataAccess.Repositories.Abstract
 	{
 		Task<Plan> GetByNameAsync(string name);
 		Task<Plan> GetWithFeatures(int id);
+		Task<List<Plan>> GetAllWithFeatures();
 	}
 }

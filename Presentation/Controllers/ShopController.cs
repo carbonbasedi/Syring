@@ -1,4 +1,5 @@
 ﻿using Business.Services.User.Abstract;
+using Business.ViewModels.User.Shop;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
@@ -11,11 +12,10 @@ namespace Presentation.Controllers
 		{
 			_shopService = shopService;
 		}
-		public async Task<IActionResult> Index()
+		public async Task<IActionResult> Index(ShopIndexVM model)
 		{
-			var model = await _shopService.GetAllAsync();
+			model = await _shopService.Index(model);
 			return View(model);
 		}
-
 	}
 }

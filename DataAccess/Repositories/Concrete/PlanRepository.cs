@@ -20,6 +20,11 @@ namespace DataAccess.Repositories.Concrete
 			_context = context;
 		}
 
+		public async Task<List<Plan>> GetAllWithFeatures()
+		{
+			return await _context.Plans.Include(p => p.Features).ToListAsync();
+		}
+
 		public async Task<Plan> GetByNameAsync(string name)
 		{
 			return await _context.Plans.FirstOrDefaultAsync(v => v.Title.ToLower().Trim() == name.ToLower().Trim() && !v.IsDeleted);

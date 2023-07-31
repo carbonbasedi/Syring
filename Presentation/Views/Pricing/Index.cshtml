@@ -40,21 +40,21 @@
 								<h4 class="title-pricing">@plan.Title</h4>
 								<p class="subtitle-pricing">@plan.SubTitle</p>
 								<div class="price">
-									<span class="unitprice">@plan.PriceUnit</span>
+									<span class="unitprice">@(plan.PriceUnit.ToString().ToUpper().Trim() == "USD" ? "$" : plan.PriceUnit.ToString().ToUpper().Trim() == "EUR" ? "€" : "₼")</span>
 									<span class="price-value">@plan.Value</span>
 									<span class="per">/@plan.Period</span>
 								</div>
-								@if (plan.Features is not null)
+								@if (plan.Features.Count != 0)
 								{
-									@foreach (var feature in plan.Features)
-									{
-										<ul class="features">
+									<ul class="features">
+										@foreach (var feature in plan.Features)
+										{
 											<li>
 												<i class="fas fa-check"></i>
 												<span>@feature.Feature</span>
 											</li>
-										</ul>
-									}
+										}
+									</ul>
 								}
 								<div class="get-started">Get Started</div>
 							</div>

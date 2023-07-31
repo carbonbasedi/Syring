@@ -14,7 +14,7 @@ namespace Presentation.Controllers
         public async Task<IActionResult> Index()
 		{
 			var model = await _pricingService.GetAllAsync();
-			return View();
+			return View(model);
 		}
 	}
 }

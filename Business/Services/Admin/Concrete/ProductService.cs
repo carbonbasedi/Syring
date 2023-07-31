@@ -42,15 +42,6 @@ namespace Business.Services.Admin.Concrete
 			return model;
 		}
 
-		public async Task<ProductListVM> GetAllWithCategory(int? id)
-		{
-			var model = new ProductListVM
-			{
-				Products = await _productRepository.GetAllWithCategoryAsync(id)
-			};
-			return model;
-		}
-
 		public ProductCreateVM Create()
 		{
 			var model = new ProductCreateVM

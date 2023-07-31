@@ -10,6 +10,7 @@ namespace DataAccess.Repositories.Abstract
 {
 	public interface IAboutUsPhotosRepository : IRepository<AboutUsPhotos>
 	{
-
+		Task<AboutUsPhotos> GetPhotosWithCategory(int id);
+		Task<List<AboutUsPhotos>> GetAllPhotosWithCategory();
 	}
 }

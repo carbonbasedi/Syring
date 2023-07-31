@@ -3,38 +3,39 @@
 
 <!-- main starts -->
 <main>
-	<!-- banner section starts -->
-	<section class="banner no-select">
-		@for (int i = 0; i < Model.Sliders.Count; i++)
-		{
-			var slider = Model.Sliders[i];
-			<div class="banner-page banner-page-@i" style="background-image: url('@Url.Content("~/assets/img/" + slider.Photo)');">
-				<div class="caption caption-@i" data-aos="fade-up" data-aos-duration="2000">
-					@slider.Title
+	@if (Model.Sliders.Count != 0)
+	{
+		<section class="banner no-select">
+			@for (int i = 0; i < Model.Sliders.Count; i++)
+			{
+				var slider = Model.Sliders[i];
+				<div class="banner-page banner-page-@i" style="background-image: url('@Url.Content("~/assets/img/" + slider.Photo)');">
+					<div class="caption caption-@i" data-aos="fade-up" data-aos-duration="2000">
+						@slider.Title
+					</div>
+					<div class="auxilary-caption" data-aos="fade-up" data-aos-duration="2000">
+						@slider.Subtitle
+					</div>
+					<div class="button" data-aos="fade-up" data-aos-duration="2000">
+						Learn more
+					</div>
 				</div>
-				<div class="auxilary-caption" data-aos="fade-up" data-aos-duration="2000">
-					@slider.Subtitle
-				</div>
-				<div class="button" data-aos="fade-up" data-aos-duration="2000">
-					Learn more
-				</div>
-			</div>
-		}
-		<div class="bullets">
+			}
 			<div class="bullets">
-				@for (int i = 0; i < Model.Sliders.Count; i++)
-				{
-					<div class="bullet bullet-@i @(i == 0 ? "selected" : "")"></div>
-				}
+				<div class="bullets">
+					@for (int i = 0; i < Model.Sliders.Count; i++)
+					{
+						<div class="bullet bullet-@i @(i == 0 ? "selected" : "")"></div>
+					}
+				</div>
 			</div>
-		</div>
 
-		<div class="overlay">
-		</div>
-	</section>
-	<!-- banner section ends -->
+			<div class="overlay">
+			</div>
+		</section>
+	}
 	<!-- vision section starts -->
-	@if (Model.Vision is not null)
+	@if (Model.Vision.Count != 0)
 	{
 		<section class="vision no-select">
 			<div class="container">
@@ -70,42 +71,46 @@
 		</section>
 	}
 	<!-- vision section ends -->
-	<!-- about section starts -->
-	<section class="about about-home no-select">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-md-6">
-					<div class="about-content" data-aos="fade-up" data-aos-duration="2000">
-						<span class="sub-heading">About Us</span>
-						<h2 class="heading">
-							Your Health is <br>
-							Our <span class="defaultcolor">Primary Concern</span>
-						</h2>
-						<p class="about-content">
-							We serve our communities by providing exceptional care, as we prevent illness,
-							restore health and provide comfort to all who entrust us with their care.
-						</p>
-						<p class="description">
-							Over 180 physicians in 40 diffrent specialties work together with the 2,000+ employees
-							at Syring Medical Center to offer a full spectrum of diagnostic and treatment services
-							for people of all ages.
-						</p>
-						<div class="signature">
-							<img src="~/assets/images/signature.png" alt="">
+	@if (Model.AboutUs.Count != 0)
+	{
+		@foreach (var aboutUs in Model.AboutUs)
+		{
+			<!-- about section starts -->
+			<section class="about about-home no-select">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-6">
+							<div class="about-content" data-aos="fade-up" data-aos-duration="2000">
+								<span class="sub-heading">@aboutUs.SubHeader</span>
+								<h2 class="heading">
+									@aboutUs.Header
+								</h2>
+								<p class="about-content">
+									@aboutUs.About
+								</p>
+								<p class="description">
+									@aboutUs.Description
+								</p>
+								<div class="signature">
+									<img src="~/assets/img/@aboutUs.SignatureImg" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-6">
+							<div class="about-images text-sm-center text-md-left" data-aos="fade-up"
+								 data-aos-duration="2000">
+								@foreach (var photo in aboutUs.Photos)
+								{
+									<img src="~/assets/img/@photo.Name" class="about-image @(photo.IsMain ? "about-image-1" : "about-image-2") mt-5 mt-md-0"></img>
+								}
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-6">
-					<div class="about-images text-sm-center text-md-left" data-aos="fade-up"
-						 data-aos-duration="2000">
-						<img src="~/assets/images/about-1.jpg" class="about-image about-image-1 mt-5 mt-md-0"></img>
-						<img src="~/assets/images/about-2.jpg" class="about-image about-image-2  mt-5 mt-md-0"></img>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- about section ends -->
+			</section>
+			<!-- about section ends -->
+		}
+	}
 	<!-- department section starts -->
 	<section class="department no-select">
 		<div class="container">

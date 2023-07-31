@@ -35,6 +35,6 @@ namespace Business.ViewModels.Admin.AboutUs
 		[Display(Name = "Photos")]
 		public List<IFormFile>? NewPhotos { get; set; }
         public List<AboutUsPhotos>? Photos { get; set; }
-		public bool IsMainPhoto { get; set; }
-	}
+        public int? MainPhotoId { get; set; }
+    }
 }

@@ -2,6 +2,7 @@
 using DataAccess.Contexts;
 using DataAccess.Repositories.Abstract;
 using DataAccess.Repositories.Base;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,15 @@ namespace DataAccess.Repositories.Concrete
 		public async Task<ProductCategory> GetByNameAsync(string name)
 		{
 			return await _context.ProductCategories.Where(p => !p.IsDeleted).FirstOrDefaultAsync(p => p.Title.ToLower().Trim() == name.ToLower().Trim());
+		}
+
+		public async Task<List<SelectListItem>> GetCategorySelectList()
+		{
+			return await _context.ProductCategories.Where(_ => !_.IsDeleted).Select(p => new SelectListItem
+			{
+				Text = p.Title,
+				Value = p.Id.ToString(),
+			}).ToListAsync();
 		}
 
 		public async Task<ProductCategory> GetWithProducts(int id)

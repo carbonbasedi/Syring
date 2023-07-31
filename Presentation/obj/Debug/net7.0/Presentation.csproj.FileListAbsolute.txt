@@ -268,3 +268,14 @@ C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\MailKit.dll
 C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\MimeKit.dll
 C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\NETCore.MailKit.dll
 C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\BouncyCastle.Crypto.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.AspNetCore.Components.WebAssembly.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.JSInterop.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\rusla\source\repos\Syring\Presentation\bin\Debug\net7.0\libman.json

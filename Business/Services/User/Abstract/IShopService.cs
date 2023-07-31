@@ -9,6 +9,6 @@ namespace Business.Services.User.Abstract
 {
 	public interface IShopService
 	{
-		Task<ShopIndexVM> GetAllAsync();
+		Task<ShopIndexVM> Index(ShopIndexVM model);
 	}
 }

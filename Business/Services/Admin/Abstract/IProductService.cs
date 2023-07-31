@@ -15,6 +15,5 @@ namespace Business.Services.Admin.Abstract
 		Task<bool> DeleteAsync(int id);
 		Task<ProductUpdateVM> UpdateAsync(int id);
 		Task<bool> UpdateAsync(ProductUpdateVM model, int id);
-		Task<ProductListVM> GetAllWithCategory(int? id);
 	}
 }
