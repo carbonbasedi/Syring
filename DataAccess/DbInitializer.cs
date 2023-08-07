@@ -1,5 +1,8 @@
 ﻿using Common.Constants;
 using Common.Entities;
+using Common.Utilities.File;
+using DataAccess.Repositories.Abstract;
+using DataAccess.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;

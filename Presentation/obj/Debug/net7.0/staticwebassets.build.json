@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AcdxJBAE50AfKSpGVavQzuibafBUDy55Nnu9itRENB0=",
+  "Hash": "T3uSAJ7WO62/jLFweRoWL4/IB3xB3BKuUfl9W5sMcXs=",
   "Source": "Presentation",
   "BasePath": "_content/Presentation",
   "Mode": "Default",
@@ -36261,23 +36261,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\284cbb0e-1507-4e27-86cb-e63f9e619f4a clinic-tooth.png"
     },
     {
-      "Identity": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\413acd5c-2ec8-4509-987a-af99e03030cb banner-image-1.jpg",
-      "SourceId": "Presentation",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\",
-      "BasePath": "_content/Presentation",
-      "RelativePath": "assets/img/413acd5c-2ec8-4509-987a-af99e03030cb banner-image-1.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\413acd5c-2ec8-4509-987a-af99e03030cb banner-image-1.jpg"
-    },
-    {
       "Identity": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\4c97bebb-2484-4dae-a9a1-7552834da924 product-8.jpg",
       "SourceId": "Presentation",
       "SourceType": "Discovered",
@@ -36463,6 +36446,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\b1c2f12d-e841-463c-a106-57611acbaf20 avatar-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\b6c8217a-a343-4a3e-87b6-561749f490f5 product-7.jpg",
+      "SourceId": "Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\",
+      "BasePath": "_content/Presentation",
+      "RelativePath": "assets/img/b6c8217a-a343-4a3e-87b6-561749f490f5 product-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\b6c8217a-a343-4a3e-87b6-561749f490f5 product-7.jpg"
     },
     {
       "Identity": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\b9227367-79e2-4ba0-83af-e9a46b49ebc1 avatar-4.jpg",

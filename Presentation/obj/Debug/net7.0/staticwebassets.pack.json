@@ -8525,10 +8525,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\284cbb0e-1507-4e27-86cb-e63f9e619f4a clinic-tooth.png"
     },
     {
-      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\413acd5c-2ec8-4509-987a-af99e03030cb banner-image-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\413acd5c-2ec8-4509-987a-af99e03030cb banner-image-1.jpg"
-    },
-    {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\4c97bebb-2484-4dae-a9a1-7552834da924 product-8.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\4c97bebb-2484-4dae-a9a1-7552834da924 product-8.jpg"
     },
@@ -8571,6 +8567,10 @@
     {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\b1c2f12d-e841-463c-a106-57611acbaf20 avatar-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\b1c2f12d-e841-463c-a106-57611acbaf20 avatar-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\b6c8217a-a343-4a3e-87b6-561749f490f5 product-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\b6c8217a-a343-4a3e-87b6-561749f490f5 product-7.jpg"
     },
     {
       "Id": "C:\\Users\\rusla\\source\\repos\\Syring\\Presentation\\wwwroot\\assets\\img\\b9227367-79e2-4ba0-83af-e9a46b49ebc1 avatar-4.jpg",

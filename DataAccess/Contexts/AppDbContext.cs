@@ -45,5 +45,9 @@ namespace DataAccess.Contexts
         public DbSet<Product> Products { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketProduct> BasketProducts { get; set; }
+        public DbSet<NewsSlider> NewsSliders { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<News> News { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
     }
 }
